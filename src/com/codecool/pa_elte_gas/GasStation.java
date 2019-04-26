@@ -6,6 +6,8 @@ public class GasStation {
     private int money;
 
     public void serveGas(int liter) {
+        gasAmount -= liter;
+        money += liter * pricePerLiter;
 
     }
 
