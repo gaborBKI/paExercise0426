@@ -5,6 +5,12 @@ public class GasStation {
     private int pricePerLiter;
     private int money;
 
+    GasStation(int pricePerLiter, int gasAmount){
+        this.pricePerLiter = pricePerLiter;
+        this.gasAmount = gasAmount;
+        this.money = 0;
+    }
+
     public void serveGas(int liter) {
         gasAmount -= liter;
         money += liter * pricePerLiter;

@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Company {
     private List<Car> cars = new ArrayList<>();
-    private GasStation gasStation = new GasStation();
+    private GasStation gasStation = new GasStation(20, 500);
     private boolean areAllCarsStopped;
 
     public void createCars(int numberOfCars){
