@@ -6,6 +6,5 @@ public class Main {
         Company company = new Company();
         company.createCars(5);
         company.simulate();
-        System.out.println(RandomGenerator.generateNumber(2, 6));
     }
 }
