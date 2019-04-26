@@ -8,6 +8,15 @@ public class Car {
     private int fuel;
     private int distanceToDrive;
     private boolean isStopped;
+    private int distanceTraveled;
+
+    public void setDistanceToDrive(int distanceToDrive) {
+        this.distanceToDrive = distanceToDrive;
+    }
+
+    public boolean isStopped() {
+        return isStopped;
+    }
 
     public Car(int index) {
         this.name = "Car" + index;
@@ -54,6 +63,11 @@ public class Car {
 
     private void drive() {
         fuel -= distanceToDrive * consumption;
+        distanceTraveled += distanceToDrive;
     }
 
+    @Override
+    public String toString() {
+        return String.valueOf(distanceTraveled);
+    }
 }

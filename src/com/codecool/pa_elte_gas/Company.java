@@ -6,6 +6,7 @@ import java.util.List;
 public class Company {
     private List<Car> cars = new ArrayList<>();
     private GasStation gasStation = new GasStation();
+    private boolean areAllCarsStopped;
 
     public void createCars(int numberOfCars){
         for (int i = 0; i < numberOfCars; i++) {
@@ -14,6 +15,13 @@ public class Company {
     }
 
     public void simulate() {
-
+        while (!areAllCarsStopped) {
+            for (Car car : cars) {
+                car.setDistanceToDrive(RandomGenerator.generateNumber(10, 1000));
+                car.prepareForJourney(gasStation);
+            }
+            areAllCarsStopped = cars.stream().noneMatch(car -> car.isStopped() == false);
+            cars.forEach(car -> System.out.println(car.toString()));
+        }
     }
 }
