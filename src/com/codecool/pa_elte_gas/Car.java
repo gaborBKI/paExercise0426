@@ -37,7 +37,7 @@ public class Car {
     }
 
     private boolean canDrive(GasStation gasStation) {
-        if (distanceToDrive * consumption <= fuel) {
+        if ((distanceToDrive / 100 * consumption) <= fuel) {
             return  true;
         } else {
             return  tryToTakeFuel(gasStation);
@@ -46,7 +46,7 @@ public class Car {
     }
 
     private boolean tryToTakeFuel(GasStation gasStation) {
-        int fuelToTake = distanceToDrive * consumption - fuel;
+        int fuelToTake = (distanceToDrive / 100) * consumption - fuel;
         if (fuelToTake > maxFuel) {
             return false;
         }
@@ -62,7 +62,7 @@ public class Car {
     }
 
     private void drive() {
-        fuel -= distanceToDrive * consumption;
+        fuel -= (distanceToDrive / 100) * consumption;
         distanceTraveled += distanceToDrive;
     }
 
