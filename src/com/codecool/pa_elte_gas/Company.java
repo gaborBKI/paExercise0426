@@ -22,6 +22,7 @@ public class Company {
             }
             areAllCarsStopped = cars.stream().noneMatch(car -> car.isStopped() == false);
             cars.forEach(car -> System.out.println(car.toString()));
+            System.out.println("--------------------");
         }
     }
 }
